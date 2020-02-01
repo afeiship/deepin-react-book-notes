@@ -1,14 +1,14 @@
-function shallowEqual(obj, newObj) {
-  if (obj === newObj) {
-    return true;
+// MyReducer.js
+const initialState = {
+  todos: []
+};
+// 我们定义的 todos 这个 reducer 在第一次执行的时候，会返回 { todos: [] } 作为初始化状态
+function todos(previousState = initialState, action) {
+  switch (action.type) {
+    case 'XXX': {
+      // 具体的业务逻辑
+    }
+    default:
+      return previousState;
   }
-  const objKeys = Object.keys(obj);
-  const newObjKeys = Object.keys(newObj);
-  if (objKeys.length !== newObjKeys.length) {
-    return false;
-  }
-  // 关键代码，只需关注 props 中每一个是否相等，无需深入判断
-  return objKeys.every((key) => {
-    return newObj[key] === obj[key];
-  });
 }
